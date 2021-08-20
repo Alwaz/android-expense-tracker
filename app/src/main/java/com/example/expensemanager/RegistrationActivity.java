@@ -1,7 +1,9 @@
 package com.example.expensemanager;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,6 +11,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -16,10 +24,20 @@ public class RegistrationActivity extends AppCompatActivity {
     private Button btnReg;
     private TextView mSignin;
 
+//    Firebase
+    private FirebaseAuth mAuth;
+
+//    progress dailoge
+    private ProgressDialog mDialogue;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_regitration);
+
+        mAuth=FirebaseAuth.getInstance();
+        mDialogue=new ProgressDialog(this);
+
 
         registration();
     }
@@ -45,6 +63,26 @@ public class RegistrationActivity extends AppCompatActivity {
                 if(TextUtils.isEmpty(password)){
                     getmPassword.setError("Password Required...");
                 }
+                mDialogue.setMessage("Proccessing...");
+                mDialogue.show();
+
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+//                    if reg is successfull show a toast and redirect to home activity
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()){
+//                            if registration complete dissmiss the dialogue
+                            mDialogue.dismiss();
+                            Toast.makeText(getApplicationContext(),"Registration Successfull",Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        }else{
+//                            if not then also dissmissed
+                            mDialogue.dismiss();
+                           Toast.makeText(getApplicationContext(),"Registration Failed...",Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
 
             }
         });

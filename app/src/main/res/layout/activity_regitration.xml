@@ -43,12 +43,13 @@
 
             <EditText
                 android:id="@+id/password_reg"
+                android:layout_width="match_parent"
                 android:background="@drawable/edittext_background"
                 android:padding="15dp"
                 android:textColor="#422248"
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
+                android:inputType="numberPassword"
                 android:hint="Password"/>
 
             <Button
@@ -71,14 +72,6 @@
                 android:textColor="#120216"
                 android:text="Already have an Account? LogIn"
                 android:padding="5dp"/>
-
-
-
-
-
-
-
-
 
 
         </LinearLayout>
