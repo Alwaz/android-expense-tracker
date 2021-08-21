@@ -15,7 +15,6 @@
             android:layout_height="wrap_content"
             android:id="@+id/my_toolbar"
             android:background="@color/toolbar_color"
-
             app:titleTextColor="@color/white">
 
 
