@@ -66,22 +66,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 mDialogue.setMessage("Proccessing...");
                 mDialogue.show();
 
-                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-//                    if reg is successfull show a toast and redirect to home activity
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
+                //                    if reg is successfull show a toast and redirect to home activity
+                mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
+                    if(task.isSuccessful()){
 //                            if registration complete dissmiss the dialogue
-                            mDialogue.dismiss();
-                            Toast.makeText(getApplicationContext(),"Registration Successfull",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                        }else{
+                        mDialogue.dismiss();
+                        Toast.makeText(getApplicationContext(),"Registration Successfull",Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                    }else{
 //                            if not then also dissmissed
-                            mDialogue.dismiss();
-                           Toast.makeText(getApplicationContext(),"Registration Failed...",Toast.LENGTH_SHORT).show();
-                        }
-
+                        mDialogue.dismiss();
+                       Toast.makeText(getApplicationContext(),"Registration Failed...",Toast.LENGTH_SHORT).show();
                     }
+
                 });
 
             }
