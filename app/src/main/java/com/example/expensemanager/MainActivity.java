@@ -65,13 +65,14 @@ public class MainActivity extends AppCompatActivity {
             mDialogue.setMessage("Proccessing...");
             mDialogue.show();
 
-           mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+           mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                @Override
                public void onComplete(@NonNull Task<AuthResult> task) {
                    if(task.isSuccessful()){
                        mDialogue.dismiss();
-                       startActivity(new Intent(getApplicationContext(),HomeActivity.class));
                        Toast.makeText(getApplicationContext(),"Login Successfull",Toast.LENGTH_SHORT).show();
+                       startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+
                    }else{
                        mDialogue.dismiss();
                        Toast.makeText(getApplicationContext(),"Login Failed",Toast.LENGTH_SHORT).show();                   }
