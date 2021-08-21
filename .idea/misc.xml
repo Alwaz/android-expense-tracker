@@ -9,11 +9,15 @@
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/drawable/background_color.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/drawable/btn_background.xml" value="0.23177083333333334" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/drawable/edittext_background.xml" value="0.23177083333333334" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/activity_main.xml" value="0.17" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/activity_regitration.xml" value="0.25" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/activity_reset.xml" value="0.1" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/appbar_layout.xml" value="0.2" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/content_main.xml" value="0.25" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/nav_header.xml" value="0.2" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/menu/bottommenu.xml" value="0.5" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/menu/navmenu.xml" value="0.2" />
       </map>
     </option>
   </component>

@@ -7,6 +7,9 @@
 
 
 <!--    Bottom navigation Bar -->
+
+
+    <!--    This will replace Fragement-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationBar"
         android:layout_width="match_parent"
@@ -15,16 +18,17 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="7dp"
-        android:background="#42224A"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="-2dp"
+        android:layout_marginBottom="4dp"
+        android:background="@color/toolbar_color"
         app:itemIconTint="@color/white"
         app:itemTextColor="@color/white"
         app:menu="@menu/bottommenu">
 
     </com.google.android.material.bottomnavigation.BottomNavigationView>
 
-
-<!--    This will replace Fragement-->
     <FrameLayout
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
