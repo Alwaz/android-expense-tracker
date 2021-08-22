@@ -253,6 +253,7 @@
         </LinearLayout>
 
    <!--       main floating action button -->
+       <!--  change icon color and bg  -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -260,10 +261,9 @@
             android:layout_gravity="bottom|end"
             android:layout_marginBottom="16dp"
             android:layout_marginRight="20dp"
-            android:backgroundTint="@color/toolbar_color"
+            android:backgroundTint="@color/purple_200"
             app:fabSize="normal"
             android:src="@drawable/income"
-
             />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
