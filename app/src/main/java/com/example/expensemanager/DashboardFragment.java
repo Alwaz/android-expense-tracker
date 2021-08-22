@@ -63,8 +63,11 @@ public class DashboardFragment extends Fragment {
 
 //        adding onClick listener to main button
         fab_main_btn.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+
+                addData();
 //               if main button is open add animations
                 if(isOpen){
                     fab_income_btn.startAnimation(FadeClose);
@@ -94,5 +97,26 @@ public class DashboardFragment extends Fragment {
         });
 
         return view;
+    }
+
+
+    private void addData(){
+//        Fab button income...
+        fab_income_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        fab_expense_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+
+
     }
 }
