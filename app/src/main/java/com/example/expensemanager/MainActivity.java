@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mAuth=FirebaseAuth.getInstance();
+
+//        if user is logged in redirect them directly to Home Activity
+        if(mAuth.getCurrentUser()!=null){
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        }
+
         mDialogue= new ProgressDialog(this);
        loginDetails();
     }

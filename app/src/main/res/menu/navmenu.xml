@@ -3,16 +3,19 @@
 
     <item android:id="@+id/dashboard"
         android:title="Dashboard"
+        android:iconTint="@color/white"
         android:icon="@drawable/dashboard"/>
 
     <item
         android:id="@+id/income"
         android:title="Income"
+        android:iconTint="@color/white"
         android:icon="@drawable/income"/>
 
     <item
         android:id="@+id/expense"
         android:title="Expense"
+        android:iconTint="@color/white"
         android:icon="@drawable/expense"/>
 
 </menu>
