@@ -1,15 +1,19 @@
 package com.example.expensemanager;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -115,7 +119,58 @@ public class DashboardFragment extends Fragment {
 
             }
         });
+    }
 
+    public void incomeDataInsert(){
+        AlertDialog.Builder myDailogue = new AlertDialog.Builder(getActivity());
+        LayoutInflater inflater = LayoutInflater.from(getActivity());
+
+        View myview = inflater.inflate(R.layout.custom_layout_for_insertdata,null);
+        myDailogue.setView(myview);
+
+        AlertDialog dialog = myDailogue.create();
+
+        EditText edtAmount = myview.findViewById(R.id.ammount_edit);
+        EditText edtType = myview.findViewById(R.id.type_edit);
+        EditText edtNotes = myview.findViewById(R.id.note_edit);
+
+
+        Button btnSave = myview.findViewById(R.id.btnSave);
+        Button btnCancel = myview.findViewById(R.id.btnCancle);
+
+//        use on click listener on buttons
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String amount= edtAmount.getText().toString().trim();
+                String type = edtType.getText().toString().trim();
+                String note = edtNotes.getText().toString().trim();
+
+                if(TextUtils.isEmpty(type)){
+                    edtType.setError("Required Field...");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(amount)){
+                    edtAmount.setError("Required Field...");
+                    return;
+                }
+
+                if(TextUtils.isEmpty(note)){
+                    edtNotes.setError("Required Field...");
+                    return;
+                }
+
+
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
 
 
     }
