@@ -2,17 +2,17 @@ package com.example.expensemanager.Model;
 
 public class Data {
 //    all the items we want to get from database
-    private double amount;
+    private String amount;
     private String type;
     private String notes;
     private String date;
     private String id;
 
-    public double getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 
@@ -48,7 +48,7 @@ public class Data {
         this.id = id;
     }
 
-    public Data(double amount, String type, String notes, String date, String id) {
+    public Data(String amount, String type, String notes, String date, String id) {
         this.amount = amount;
         this.type = type;
         this.notes = notes;
@@ -56,7 +56,7 @@ public class Data {
         this.id = id;
     }
 
-    public Data(){
+    public Data(int ouramountint, String type, String note, String id, String mDate){
 
     }
 }
