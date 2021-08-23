@@ -1,5 +1,6 @@
 package com.example.expensemanager;
 
+import android.app.ActionBar;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.net.URI;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -246,9 +248,10 @@ public class DashboardFragment extends Fragment {
 
         View myview = inflater.inflate(R.layout.custom_layout_for_insertdata,null);
         mydialogue.setView(myview);
-        AlertDialog dialogue=mydialogue.create();
 
-        EditText ammount = myview.findViewById(R.id.ammount_edit);
+        final AlertDialog dialog = mydialogue.create();
+
+       final EditText ammount = myview.findViewById(R.id.ammount_edit);
         EditText type = myview.findViewById(R.id.type_edit);
         EditText note = myview.findViewById(R.id.note_edit);
 
@@ -276,7 +279,6 @@ public class DashboardFragment extends Fragment {
                      return;
                  }
                  ftAnimation();
-
             }
 
         });
@@ -285,9 +287,10 @@ public class DashboardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 ftAnimation();
-                dialogue.dismiss();
+                dialog.dismiss();
             }
         });
+        dialog.show();
     }
 
 
