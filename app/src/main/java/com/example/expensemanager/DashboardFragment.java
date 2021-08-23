@@ -215,8 +215,8 @@ public class DashboardFragment extends Fragment {
                     return;
                 }
 
-                String id =  mIncomeDatabase.push().getKey();
 
+                String id =  mIncomeDatabase.push().getKey();
 //                to get current date
                 String mDate = DateFormat.getDateInstance().format(new Date());
 
@@ -270,6 +270,8 @@ public class DashboardFragment extends Fragment {
                      ammount.setError("Required Field...");
                      return;
                  }
+
+                 int inamount = Integer.parseInt(tmAmount);
                  if (TextUtils.isEmpty(tmtype)){
                      type.setError("Required Field...");
                      return;
@@ -278,7 +280,19 @@ public class DashboardFragment extends Fragment {
                      note.setError("Required Field..");
                      return;
                  }
+
+
+//                 Generate random id
+                String id = mExpenseDatabase.push().getKey();
+                 String mDate = DateFormat.getDateInstance().format(new Date());
+                 Data data=new Data(inamount,tmtype,tmnote,mDate,id);
+
+//                 inside this expense database we'll create a random id where we will pass our data.
+                 mExpenseDatabase.child(id).setValue(data);
+
+
                  ftAnimation();
+                 dialog.dismiss();
             }
 
         });
