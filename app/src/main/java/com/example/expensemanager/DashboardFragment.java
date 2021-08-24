@@ -51,10 +51,8 @@ public class DashboardFragment extends Fragment {
 
 //    Firebase
    private FirebaseAuth mAuth;
-    private DatabaseReference mIncomeDatabase;
+   private DatabaseReference mIncomeDatabase;
   private DatabaseReference mExpenseDatabase;
-
-
 
 
     @Override
@@ -74,9 +72,9 @@ public class DashboardFragment extends Fragment {
         String uid = mUser.getUid();
 
 
-
-        mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
         mExpenseDatabase = FirebaseDatabase.getInstance().getReference().child("ExpenseDatabase").child(uid);
+        mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
+
 
 
 
@@ -215,16 +213,14 @@ public class DashboardFragment extends Fragment {
                     return;
                 }
 
-
-                String id =  mIncomeDatabase.push().getKey();
+//                Random id
+                String uId =  mIncomeDatabase.push().getKey();
 //                to get current date
                 String mDate = DateFormat.getDateInstance().format(new Date());
 
 //                creating object of model class
-                Data data = new Data(ouramountint,type,note,id,mDate);
-
-                mIncomeDatabase.child(id).setValue(data);
-
+                Data data = new Data(ouramountint,mDate,uId,note,type);
+                mIncomeDatabase.child(uId).setValue(data);
                 Toast.makeText(getActivity(), "Data Added",Toast.LENGTH_SHORT).show();
 
                 ftAnimation();
@@ -283,13 +279,15 @@ public class DashboardFragment extends Fragment {
 
 
 //                 Generate random id
-                String id = mExpenseDatabase.push().getKey();
+                 String id = mExpenseDatabase.push().getKey();
                  String mDate = DateFormat.getDateInstance().format(new Date());
                  Data data=new Data(inamount,tmtype,tmnote,mDate,id);
 
 //                 inside this expense database we'll create a random id where we will pass our data.
                  mExpenseDatabase.child(id).setValue(data);
 
+//                 because its a fragment hence get Activity
+                 Toast.makeText(getActivity(), "Data added", Toast.LENGTH_SHORT).show();
 
                  ftAnimation();
                  dialog.dismiss();

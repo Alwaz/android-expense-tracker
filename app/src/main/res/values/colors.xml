@@ -13,6 +13,10 @@
 <!--   as you'll click on these icons thier color will change -->
     <color name="dashboard_color">#FFE91E63</color>
     <color name="income_color">#3F51B5</color>
-    <color name="expense_color">#FF3F51B5</color>
+    <color name="expense_color">#493271</color>
+
+
+          <!--expense amount colors -->
+    <color name="expense_amount">#FFFB030C</color>
 
 </resources>

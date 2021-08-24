@@ -16,9 +16,11 @@
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/appbar_layout.xml" value="0.2" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/content_main.xml" value="0.25" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/custom_layout_for_insertdata.xml" value="0.215625" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/expense_recycler_data.xml" value="0.22" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/fragment_dashboard.xml" value="0.15677083333333333" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/fragment_expense.xml" value="0.15677083333333333" />
-        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/fragment_income.xml" value="0.14270833333333333" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/fragment_income.xml" value="0.22" />
+        <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/income_recycler_data.xml" value="0.25" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/layout/nav_header.xml" value="0.2" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/menu/bottommenu.xml" value="0.5" />
         <entry key="..\:/Users/Farhan Qazi/AndroidStudioProjects/ExpenseManager/app/src/main/res/menu/navmenu.xml" value="0.2" />

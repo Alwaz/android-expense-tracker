@@ -1,35 +1,34 @@
 package com.example.expensemanager.Model;
+import static java.lang.Integer.parseInt;
 
 public class Data {
 //    all the items we want to get from database
-    private String amount;
-    private String type;
-    private String notes;
+    private int amount;
     private String date;
     private String id;
+    private String notes;
+    private String type;
 
-    public String getAmount() {
-        return amount;
-    }
 
-    public void setAmount(String amount) {
+
+    public Data(int amount, String date, String id, String notes, String type) {
         this.amount = amount;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
+        this.date = date;
+        this.id = id;
+        this.notes = notes;
         this.type = type;
     }
 
-    public String getNotes() {
-        return notes;
+    public int getAmount() {
+        return parseInt(amount);
     }
 
-    public void setNotes(String notes) {
-        this.notes = notes;
+    private int parseInt(int amount) {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 
     public String getDate() {
@@ -48,15 +47,29 @@ public class Data {
         this.id = id;
     }
 
-    public Data(String amount, String type, String notes, String date, String id) {
-        this.amount = amount;
-        this.type = type;
+    public String getNotes() {
+        return notes;
+    }
+
+    public void setNotes(String notes) {
         this.notes = notes;
-        this.date = date;
-        this.id = id;
     }
 
-    public Data(int ouramountint, String type, String note, String id, String mDate){
-
+    public String getType() {
+        return type;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+
+
+
+
+
+
+
+
+
 }
