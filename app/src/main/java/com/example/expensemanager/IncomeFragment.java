@@ -18,8 +18,11 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.w3c.dom.Text;
 
@@ -35,6 +38,9 @@ public class IncomeFragment extends Fragment {
 
 //    Recyclerview
     private RecyclerView recyclerView;
+
+//    TextView to display result
+    private TextView incomeTotalSum;
 
     public IncomeFragment() {
         // Required empty public constructor
@@ -55,6 +61,9 @@ public class IncomeFragment extends Fragment {
 
 
         mIncomeDatabase = FirebaseDatabase.getInstance().getReference().child("IncomeData").child(uid);
+
+        incomeTotalSum=view.findViewById(R.id.income_txt_result);
+
         recyclerView = view.findViewById(R.id.recycler_id_income);
 
         LinearLayoutManager layoutManager=new LinearLayoutManager(getActivity());
@@ -62,6 +71,30 @@ public class IncomeFragment extends Fragment {
         layoutManager.setStackFromEnd(true);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
+
+
+        mIncomeDatabase.addValueEventListener(new ValueEventListener() {
+
+            int totalValue=0;
+
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot mySnapshot: snapshot.getChildren()){
+                    Data data=mySnapshot.getValue(Data.class);
+
+                    totalValue+=data.getAmount();
+
+//                            concate this value
+
+                    String stTotalValue=String.valueOf(totalValue);
+                   incomeTotalSum.setText(stTotalValue);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
         return view;
     }
@@ -92,9 +125,14 @@ public class IncomeFragment extends Fragment {
                         .inflate(R.layout.income_recycler_data, parent, false);
                 return new MyViewHolder(view);
             }
-
         };
+
         recyclerView.setAdapter(adapter);
+
+
+
+
+
     }
 
 
@@ -128,5 +166,7 @@ public class IncomeFragment extends Fragment {
             String stamount=String.valueOf(amount);
             mAmount.setText(stamount);
         }
+
+
     }
 }

@@ -10,6 +10,10 @@ public class Data {
     private String type;
 
 
+//    No argument constructor for firebase.
+    public Data(){ }
+
+
 
     public Data(int amount, String date, String id, String notes, String type) {
         this.amount = amount;
